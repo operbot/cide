@@ -30,8 +30,8 @@ def uploadlist(dir):
 
 
 setup(
-    name="opb",
-    version="10",
+    name="cide",
+    version="1",
     author="B.H.J. Thate",
     author_email="operbot100@gmail.com",
     url="http://github.com/operbot/operbot",
@@ -39,11 +39,11 @@ setup(
     long_description=read(),
     long_description_content_type="text/x-rst",
     license="Public Domain",
-    packages=["opb", "opb.modules"],
+    packages=["cide", "cide.modules"],
     scripts=[
-             "bin/opb",
-             "bin/opbc",
-             "bin/opbd"
+             "bin/cide",
+             "bin/cidec",
+             "bin/cided"
             ],
     classifiers=[
         "Development Status :: 3 - Alpha",

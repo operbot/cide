@@ -8,7 +8,7 @@ import threading
 import time
 
 
-from .objects import Object, kind
+from .objects import Object
 from .threads import launch
 
 
@@ -19,9 +19,6 @@ def __dir__():
            )
 
 
-__all__ = __dir__()
-
-
 class Timer:
 
     def __init__(self, sleep, func, *args, thrname=None):
@@ -30,7 +27,7 @@ class Timer:
         self.func = func
         self.sleep = sleep
         self.name = thrname or str(self.func).split()[2]
-        self.state = Object
+        self.state = Object()
         self.timer = None
 
     def run(self):
