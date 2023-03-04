@@ -13,16 +13,16 @@ import termios
 import time
 
 
-from opb.clients import Client
-from opb.command import Command, scan
-from opb.storage import Storage
-from opb.threads import launch
+from cide.clients import Client
+from cide.command import Command, scan
+from cide.storage import Storage
+from cide.threads import launch
 
 
-import opb.modules
+import cide.modules
 
 
-Storage.workdir = os.path.expanduser("~/.opb")
+Storage.workdir = os.path.expanduser("~/.cide")
 
 
 class CLI(Client):
@@ -32,10 +32,10 @@ class CLI(Client):
         sys.stdout.flush()
 
     def scan(self):
-        path = opb.modules.__path__[0]
+        path = cide.modules.__path__[0]
         for fnm in os.listdir(path):
             try:
-                mod = importlib.import_module("." + fnm[:-3], "opb.modules")
+                mod = importlib.import_module("." + fnm[:-3], "cide.modules")
             except ModuleNotFoundError:
                continue
             scan(mod)
