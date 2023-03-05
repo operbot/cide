@@ -45,6 +45,10 @@ setup(
              "bin/cidec",
              "bin/cided"
             ],
+    include_package_data=True,
+    data_files=[
+                ("share/cide", uploadlist("files")),
+               ],
     classifiers=[
         "Development Status :: 3 - Alpha",
         "License :: Public Domain",
